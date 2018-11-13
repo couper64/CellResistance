@@ -43,6 +43,10 @@ public class Player : MonoBehaviour {
 	private State state = State.IDLE;
 	private CellRes.Type type = Type.WHITE;
 
+    public CellRes.Type GetCellType {
+        get { return type; }
+    }
+
 	private void Awake() {
 		Time.timeScale = 1.0f;
 	}
