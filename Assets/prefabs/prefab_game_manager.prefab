@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4602134173772418}
   - component: {fileID: 114531266238765928}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: prefab_game_manager
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,3 +53,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   score: 0
+  scoreV: {fileID: 0}
+  hScoreV: {fileID: 0}

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4830183649400936}
   - component: {fileID: 114969062582447484}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: prefab_enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,3 +383,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
+  fireRatep: 0
+  fireRatem: 0
+  exp: {fileID: 0}

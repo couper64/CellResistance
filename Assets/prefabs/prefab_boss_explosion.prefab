@@ -71,7 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4453172932128760}
   m_Layer: 0
-  m_Name: BossExplosion
+  m_Name: prefab_boss_explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

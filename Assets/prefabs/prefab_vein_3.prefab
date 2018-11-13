@@ -238,7 +238,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4475026764499360}
   m_Layer: 8
-  m_Name: Vein 3
+  m_Name: prefab_vein_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
