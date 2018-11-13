@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5dd14857b7339c14b83dee231fe74c00
+guid: bd25d8008ac8d66499683cd3b1f36c7f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -14,6 +14,9 @@ ModelImporter:
     2100000: lambert3SG
     2100002: lambert2SG
     2100004: initialShadingGroup
+    2100006: polySurface1Mat
+    2100008: polySurface5Mat
+    2100010: polySurface6_pCylinder4Mat
     2300000: polySurface1
     2300002: polySurface5
     2300004: polySurface6_pCylinder4
