@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4347649758475196}
   - component: {fileID: 114219538118360090}
   m_Layer: 0
-  m_Name: cancerBig_1
+  m_Name: prefab_cancer_big_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

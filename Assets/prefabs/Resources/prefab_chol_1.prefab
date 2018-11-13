@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4888613357209462}
   - component: {fileID: 114396205923492836}
   m_Layer: 0
-  m_Name: Chol_1
+  m_Name: prefab_chol_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

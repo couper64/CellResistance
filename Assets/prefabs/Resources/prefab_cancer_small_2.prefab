@@ -9,74 +9,74 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1992651624860242}
+  m_RootGameObject: {fileID: 1482329854253862}
   m_IsPrefabAsset: 1
---- !u!1 &1924481486675012
+--- !u!1 &1451094728698962
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4232599443904134}
-  - component: {fileID: 33048830777655094}
-  - component: {fileID: 23594226406374598}
+  - component: {fileID: 4042996898186352}
+  - component: {fileID: 33029590140020190}
+  - component: {fileID: 23832577335366992}
   m_Layer: 0
-  m_Name: pSphere1
+  m_Name: pSphere2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1992651624860242
+--- !u!1 &1482329854253862
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4823122237523136}
-  - component: {fileID: 114594957983289670}
+  - component: {fileID: 4274948705430066}
+  - component: {fileID: 114795134485732566}
   m_Layer: 0
-  m_Name: cancerBig_2
+  m_Name: prefab_cancer_small_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4232599443904134
+--- !u!4 &4042996898186352
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1924481486675012}
+  m_GameObject: {fileID: 1451094728698962}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4823122237523136}
+  m_Father: {fileID: 4274948705430066}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4823122237523136
+--- !u!4 &4274948705430066
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992651624860242}
+  m_GameObject: {fileID: 1482329854253862}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4232599443904134}
+  - {fileID: 4042996898186352}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23594226406374598
+--- !u!23 &23832577335366992
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1924481486675012}
+  m_GameObject: {fileID: 1451094728698962}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -106,19 +106,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33048830777655094
+--- !u!33 &33029590140020190
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1924481486675012}
-  m_Mesh: {fileID: 4300000, guid: 57f931abd7817c744bec7eb4c3760118, type: 3}
---- !u!114 &114594957983289670
+  m_GameObject: {fileID: 1451094728698962}
+  m_Mesh: {fileID: 4300000, guid: 17a1c38d8d939fc428480fbc2b18c040, type: 3}
+--- !u!114 &114795134485732566
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992651624860242}
+  m_GameObject: {fileID: 1482329854253862}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 605e53daeecc97544ad3d437d041a3d8, type: 3}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pulsingMinDelay: 0
   pulsingMinDuration: 1
-  pulsingMinSpeed: 0.25
+  pulsingMinSpeed: 0.5
   pulsingMaxDelay: 10
-  pulsingMaxDuration: 5
-  pulsingMaxSpeed: 0.5
+  pulsingMaxDuration: 2.5
+  pulsingMaxSpeed: 1

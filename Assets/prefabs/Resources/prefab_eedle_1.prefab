@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4298311444997084}
   - component: {fileID: 114753124962625424}
   m_Layer: 0
-  m_Name: Needle_1
+  m_Name: prefab_eedle_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
