@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 
 public class EnemyBehaviour : Enemy {
@@ -8,11 +9,12 @@ public class EnemyBehaviour : Enemy {
 	public float fireRatem;
 	CellRes.Type type = CellRes.Type.ENEMY_WHITE;
 	public GameObject exp;
+    List<Vector3> waypoints = new List<Vector3>();
 
 	private void Start() {
 		type = (CellRes.Type)(int)Random.Range(2, 4);
 		hp = 100;
-		currentState = State.ATTACK_PATTERN_1;
+		currentState = State.ATTACK_STRAIGHT_LINE;
 		nextFire = nextFire + Random.Range(fireRatep, fireRatem);
 	}
 
@@ -29,7 +31,10 @@ public class EnemyBehaviour : Enemy {
 
 	void StraightLine() {
 		if (currentState == State.ATTACK_STRAIGHT_LINE) {
-			transform.parent.Translate(-Vector3.up * (Time.deltaTime * 0.001f));
+            waypoints.Add(new Vector3(0, 6, -12));
+            waypoints.Add(new Vector3(0, -6, -12));
+            transform.parent.position = Vector3.MoveTowards(waypoints[0], waypoints[1], 5f*Time.deltaTime);
+			//transform.parent.Translate(-Vector3.up * (Time.deltaTime * 10f));
 		}
 	}
 	float direction = 1;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemySpawner : MonoBehaviour {
+public class EnemySpawner : Enemy {
 	public GameObject enemy;
 	private float nextSpawn = 3.0f;
 	public float spawnratemin;
