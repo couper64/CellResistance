@@ -13,7 +13,7 @@ public class MenuBehaviour : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown("Pause")) {
 			GetComponent<AudioSource>().Play();
-			UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+			UnityEngine.SceneManagement.SceneManager.LoadScene("scene_game_play");
 		}
 	}
 }

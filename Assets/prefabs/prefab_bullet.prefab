@@ -84,13 +84,12 @@ MonoBehaviour:
   whitem: {fileID: 2100000, guid: 5d20ef4ee4f3f444d998c5c8abd60e7e, type: 2}
   blackm: {fileID: 2100000, guid: 5b05c0a08c103484f8585a1a6f8264ba, type: 2}
   bulletType: 2
-  GameManager: {fileID: 0}
   x: 0
   speed: 0
-  score: {fileID: 114953211571825492, guid: 12d675754ec83884b80d9dfdfb19dae2, type: 2}
-  highestScore: {fileID: 114463437981194150, guid: 90a220e5b4d64ef44a5ddc522bafeca8,
+  score: {fileID: 114310611624605086, guid: c9fbd9dd8deb38141b8dbdaaf8680c75, type: 2}
+  highestScore: {fileID: 114587961307883160, guid: c9fbd9dd8deb38141b8dbdaaf8680c75,
     type: 2}
-  player: {fileID: 0}
+  player: {fileID: 1442602153348810, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed, type: 2}
 --- !u!212 &212953740850688352
 SpriteRenderer:
   m_ObjectHideFlags: 1

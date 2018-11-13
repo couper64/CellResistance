@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Enemy
   - Canvas
+  - GameManager
   layers:
   - Default
   - TransparentFX

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4042996898186352}
   - component: {fileID: 33029590140020190}
   - component: {fileID: 23832577335366992}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pSphere2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,9 +37,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4274948705430066}
   - component: {fileID: 114795134485732566}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: prefab_cancer_small_2
-  m_TagString: Untagged
+  m_TagString: BackgroundProps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +112,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451094728698962}
-  m_Mesh: {fileID: 4300000, guid: 17a1c38d8d939fc428480fbc2b18c040, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8e8c59d0ae496b443b0f156ba496ca63, type: 3}
 --- !u!114 &114795134485732566
 MonoBehaviour:
   m_ObjectHideFlags: 1

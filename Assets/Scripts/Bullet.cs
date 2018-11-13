@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 {
     public Material whitem, blackm;
     public CellRes.Type bulletType;
-    public GameObject GameManager;
+    //public GameObject GameManager;
     public static int ScoreSave;
     public int x = 0;
 	public float speed;
@@ -59,7 +59,7 @@ public class Bullet : MonoBehaviour
 			}
 			else {
 				ScoreSave = ScoreSave + 10;
-				GameObject.Find("GameManager").GetComponent<GameManager>().score = ScoreSave;
+				GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>().score = ScoreSave;
 				Debug.Log(other.name);
 				Destroy(other.transform.parent.gameObject);
 				Destroy(gameObject);

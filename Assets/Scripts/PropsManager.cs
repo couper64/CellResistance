@@ -10,13 +10,13 @@ public class PropsManager : MonoBehaviour {
 		resources = new System.Collections.Generic.List<GameObject>();
 
 		// feeding with data;
-		resources.Add(Resources.Load<GameObject>("cancerBig_1"));
-		resources.Add(Resources.Load<GameObject>("cancerBig_2"));
-		resources.Add(Resources.Load<GameObject>("CancerSmall_1"));
-		resources.Add(Resources.Load<GameObject>("CancerSmall_2"));
-		resources.Add(Resources.Load<GameObject>("Chol_1"));
-		resources.Add(Resources.Load<GameObject>("crater_1"));
-		resources.Add(Resources.Load<GameObject>("Needle_1"));
+		resources.Add(Resources.Load<GameObject>("prefab_cancer_big_1"));
+		resources.Add(Resources.Load<GameObject>("prefab_cancer_big_2"));
+		resources.Add(Resources.Load<GameObject>("prefab_cancer_small_1"));
+		resources.Add(Resources.Load<GameObject>("prefab_cancer_small_2"));
+		resources.Add(Resources.Load<GameObject>("prefab_chol_1"));
+		resources.Add(Resources.Load<GameObject>("prefab_crater_1"));
+		resources.Add(Resources.Load<GameObject>("prefab_needle_1"));
 
 		// props are vital for the game;
 		string message = typeof(System.Collections.Generic.List<GameObject>).FullName;

@@ -269,7 +269,7 @@ public class Player : MonoBehaviour {
 			state = State.FLYING;
 			Time.timeScale = 1.0f;
 			hp = 100f;
-			SceneManager.LoadScene("MainMenu");
+			SceneManager.LoadScene("scene_main_menu");
 		}
 	}
 
@@ -326,9 +326,9 @@ public class Player : MonoBehaviour {
 	}
 
 	private void RestartGame() {
-		SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("Game"));
-		SceneManager.LoadScene("Game");
-		SceneManager.SetActiveScene(SceneManager.GetSceneByName("Game"));
+		SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("scene_game_play"));
+		SceneManager.LoadScene("scene_game_play");
+		SceneManager.SetActiveScene(SceneManager.GetSceneByName("scene_game_play"));
 	}
 
 	public void OnTriggerEnter(Collider other) {

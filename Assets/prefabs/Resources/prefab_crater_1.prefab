@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4067643290011430}
   - component: {fileID: 114681039757451500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: prefab_crater_1
-  m_TagString: Untagged
+  m_TagString: BackgroundProps
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4758210599093136}
   - component: {fileID: 33878903929307504}
   - component: {fileID: 23323702973699170}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vein1:pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1459469929275530}
-  m_Mesh: {fileID: 4300000, guid: e1af7977168ba644084aa7341be86e6e, type: 3}
+  m_Mesh: {fileID: 4300000, guid: e0e4da29cee7c8345bc0191e446453f0, type: 3}
 --- !u!114 &114681039757451500
 MonoBehaviour:
   m_ObjectHideFlags: 1
