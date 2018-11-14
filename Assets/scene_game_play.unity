@@ -192,6 +192,10 @@ Prefab:
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 2086872238}
+    - target: {fileID: 4493642263978398, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed, type: 2}
   m_IsPrefabAsset: 0
@@ -436,6 +440,10 @@ Prefab:
     - target: {fileID: 4265801908942784, guid: e477dc45c75597b43b495be153a22353, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1076733663945372, guid: e477dc45c75597b43b495be153a22353, type: 2}
+      propertyPath: m_Name
+      value: LightsRotationPivot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e477dc45c75597b43b495be153a22353, type: 2}
