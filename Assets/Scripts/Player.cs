@@ -38,12 +38,15 @@ public class Player : MonoBehaviour {
 	public GameObject exp;
 	public GameObject gunCenter;
 	public GameObject ship;
+    public GameObject GM;
+
 
 	private float timer = 3;
 	private State state = State.IDLE;
 	private CellRes.Type type = Type.WHITE;
+    private bool stop_explosion = false;
 
-	private void Awake() {
+    private void Awake() {
 		Time.timeScale = 1.0f;
 	}
 
@@ -134,9 +137,7 @@ public class Player : MonoBehaviour {
 			whiteFuel.transform.localScale.z
 		);
 
-		if (Input.GetButtonDown("Pause")) {
-			Pause();
-		}
+		
 	}
 
 	private void Idle() {
@@ -248,9 +249,15 @@ public class Player : MonoBehaviour {
 	}
 
 	private void Death() {
-		//GameObject.FindGameObjectWithTag("Death").SetActive(true);
-		//state = State.DEATH;
-		Instantiate<GameObject>(exp, transform.position, transform.rotation);
+        //GameObject.FindGameObjectWithTag("Death").SetActive(true);
+        //state = State.DEATH;
+
+        if (stop_explosion == false)
+        {
+            Instantiate<GameObject>(exp, transform.position, transform.rotation);
+
+            stop_explosion = true;
+        }
 		hp = 0;
 		if (!gameOverMenu.activeSelf) {
 			gameOverMenu.SetActive(true);
@@ -269,6 +276,7 @@ public class Player : MonoBehaviour {
 			state = State.FLYING;
 			Time.timeScale = 1.0f;
 			hp = 100f;
+            DestroyAllGameObjects();
 			SceneManager.LoadScene("scene_main_menu");
 		}
 	}
@@ -326,6 +334,7 @@ public class Player : MonoBehaviour {
 	}
 
 	private void RestartGame() {
+        DestroyAllGameObjects();
 		SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName("scene_game_play"));
 		SceneManager.LoadScene("scene_game_play");
 		SceneManager.SetActiveScene(SceneManager.GetSceneByName("scene_game_play"));
@@ -363,4 +372,21 @@ public class Player : MonoBehaviour {
 		playerFace.sprite = playerFaceHurt;
 		timer = 0;
 	}
+
+
+    private void OnApplicationQuit()
+    {
+        DestroyAllGameObjects();
+    }
+
+    public void DestroyAllGameObjects()
+    {
+        GameObject[] GameObjects = (FindObjectsOfType<GameObject>() as GameObject[]);
+
+        for (int i = 0; i < GameObjects.Length; i++)
+        {
+            Destroy(GameObjects[i]);
+        }
+    }
+
 }

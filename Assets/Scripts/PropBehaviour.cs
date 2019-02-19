@@ -16,8 +16,12 @@ public class PropBehaviour : MonoBehaviour {
 	private float pulsingDuration = 0;
 	private float pulsingSpeed = 0;
 	private bool isPulsable = false;
+    public GameObject player;
+   
+    
 
-	private void Start() {
+
+    private void Start() {
 		// because we want them to pulse at different times;
 		pulsingDelay = Random.Range(pulsingMinDelay, pulsingMaxDelay);
 		pulsingDuration = Random.Range(pulsingMinDuration, pulsingMaxDuration);
@@ -32,13 +36,34 @@ public class PropBehaviour : MonoBehaviour {
 
 		isPulsable = pulsingDuration >= 0.00f;
 		isPulsable = pulsingSpeed >= 0.00f;
-	}
 
-	private void Update() {
-		if (isPulsable) {
-			Pulse();
-		}
-	}
+        player = GameObject.Find("prefab_player");
+        
+
+
+    }
+
+    private void Update() {
+
+        if (Time.timeScale == 1)
+        {
+            Pulse();
+        }
+
+        if (Input.GetButtonDown("Pause"))
+        {
+            Pause();
+        }
+
+        if (player.GetComponent<Player>().hp <= 0)
+        {
+            Time.timeScale = 0.1f;
+        }
+
+        //if (ispulsable) {
+        //	pulse();
+        //}
+    }
 
 	private void Pulse() {
 		// pulsing animation;
@@ -66,4 +91,19 @@ public class PropBehaviour : MonoBehaviour {
 			transform.GetChild(i).localScale += scaleDelta;
 		}
 	}
+
+
+    public void Pause()
+    {
+        if (Time.timeScale == 0)
+        {
+            Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+
+        }
+    }
+
 }

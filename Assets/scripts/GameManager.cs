@@ -26,7 +26,26 @@ public class GameManager : MonoBehaviour {
 			highscore = score;
 			PlayerPrefs.SetInt("RECORD", highscore);
 		}
-	}
 
+        if (Input.GetButtonDown("Pause"))
+        {
+            Pause();
+            
+        }
+    }
+
+    
+    public void Pause()
+    {
+        if (Time.timeScale == 0)
+        {
+         Time.timeScale = 1;
+        }
+        else
+        {
+            Time.timeScale = 0;
+
+        }
+    }
 
 }
