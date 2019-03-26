@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Boss : Enemy {
 
-
 	public GameObject bullet;
 	private float nextFire = 3.0f;
 	public float fireRatep;
@@ -28,18 +27,9 @@ public class Boss : Enemy {
 	}
 
 	private void Update() {
-
+		UnityEngine.Profiling.Profiler.BeginSample("Boss Update Profiling");
 		int i = Random.Range(1, 100);
-
-		if (i > 20 && i < 80) {
-			Debug.Log("dio");
-			Fire();
-		}
-
-		//hp--;
-
-		//StraightLine();
-
+		if (i > 20 && i < 80) { Fire(); }
 		if (wpnum == 1) {
 			moveTo1();
 			if (transform.position == wp1.position) wpnum = 2;
@@ -52,61 +42,21 @@ public class Boss : Enemy {
 			moveTo3();
 			if (transform.position == wp3.position) wpnum = 1;
 		}
-
 		Reposition();
-		//Death();
+		UnityEngine.Profiling.Profiler.EndSample();
 	}
-
-	//private void FixedUpdate()
-	//{
-	//    Fire();
-	//}
-
-	//void StraightLine()
-	//{
-	//    if (EnemyState.CurrentState == State.Attack_Straight_Line)
-	//    {
-	//        transform.Translate(-Vector3.up * (Time.deltaTime * 10f));
-	//    }
-	//}
-
 	
-
-
-
 	void moveTo1() {
 		transform.position = Vector3.MoveTowards(transform.position, wp1.position, kek);
-		//if(transform.position == wp1.position )
-		//moveTo2();
 	}
 
 	void moveTo2() {
 		transform.position = Vector3.MoveTowards(transform.position, wp2.position, kek);
-		//if (transform.position == wp2.position)
-		//    moveTo3();
-
 	}
+
 	void moveTo3() {
 		transform.position = Vector3.MoveTowards(transform.position, wp3.position, kek);
-		//if (transform.position == wp3.position)
-		//    moveTo1();
 	}
-
-
-
-
-	//void Death()
-	//{
-	//    if (hp <= 0)
-	//    {
-	//        EnemyState.CurrentState = State.Death;
-	//        if (EnemyState.CurrentState == State.Death)
-	//        {
-	//            Destroy(gameObject);
-	//            Debug.Log("dead");
-	//        }
-	//    }
-	//}
 
 	void Reposition() {
 		if (transform.position.y <= -70f) {
@@ -114,13 +64,14 @@ public class Boss : Enemy {
 		}
 	}
 
-
-
 	void Fire() {
-		Vector3 cannon = new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z);
 
+		Vector3 cannon = new Vector3(
+			transform.localPosition.x, 
+			transform.localPosition.y, 
+			transform.localPosition.z
+		);
 
-		//nextFire = Time.time + Random.Range(fireRatep, fireRatem);
 		var bulletClone = (GameObject)Instantiate(bullet, cannon, transform.rotation);
 		bulletClone.GetComponent<Rigidbody>().velocity = (transform.up * -20f);
 

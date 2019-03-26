@@ -113,7 +113,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &69024522
+--- !u!1001 &216578776
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -152,21 +152,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114163820868427734, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed,
-        type: 2}
-      propertyPath: scoreV
-      value: 
-      objectReference: {fileID: 1423723164}
-    - target: {fileID: 114163820868427734, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed,
-        type: 2}
-      propertyPath: hScoreV
-      value: 
-      objectReference: {fileID: 302014129}
-    - target: {fileID: 114049434849252150, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed,
-        type: 2}
-      propertyPath: waveValue
-      value: 
-      objectReference: {fileID: 553761200}
     - target: {fileID: 114263422958131634, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed,
         type: 2}
       propertyPath: playerHealth
@@ -192,6 +177,21 @@ Prefab:
       propertyPath: gameOverMenu
       value: 
       objectReference: {fileID: 2086872238}
+    - target: {fileID: 114163820868427734, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed,
+        type: 2}
+      propertyPath: scoreV
+      value: 
+      objectReference: {fileID: 1423723164}
+    - target: {fileID: 114163820868427734, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed,
+        type: 2}
+      propertyPath: hScoreV
+      value: 
+      objectReference: {fileID: 302014129}
+    - target: {fileID: 114049434849252150, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed,
+        type: 2}
+      propertyPath: waveValue
+      value: 
+      objectReference: {fileID: 553761200}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b50e6f435f36e34c8d6b0a5c0aa48ed, type: 2}
   m_IsPrefabAsset: 0
@@ -494,6 +494,18 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1684383942692186, guid: c9fbd9dd8deb38141b8dbdaaf8680c75, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1008084998910656, guid: c9fbd9dd8deb38141b8dbdaaf8680c75, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1400152663548668, guid: c9fbd9dd8deb38141b8dbdaaf8680c75, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9fbd9dd8deb38141b8dbdaaf8680c75, type: 2}

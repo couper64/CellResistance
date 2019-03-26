@@ -78,12 +78,12 @@ MeshRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1824887646013986}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 2e63fcd3cdb4180479ac79e26c6bf064, type: 2}
@@ -125,8 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pulsingMinDelay: 0
-  pulsingMinDuration: 0.5
-  pulsingMinSpeed: 0.1
+  pulsingMinDuration: 1.6
+  pulsingMinSpeed: 4
   pulsingMaxDelay: 1
-  pulsingMaxDuration: 1
-  pulsingMaxSpeed: 0.15
+  pulsingMaxDuration: 1.7
+  pulsingMaxSpeed: 6

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 public class BackgroundManager : MonoBehaviour {
+
 	public enum State {
 		PAUSE,
 		PLAY
@@ -22,6 +23,7 @@ public class BackgroundManager : MonoBehaviour {
 		// allocate new list;
 		// because we want to store references to backgrounds;
 		backgrounds = new System.Collections.Generic.List<GameObject>();
+
 		for (int i = 0; i < resources.Length; i++) {
 			for (int j = 0; j < backgroundsMaxNumber; j++) {
 				GameObject background = Instantiate<GameObject>(resources[i], transform);
@@ -36,11 +38,13 @@ public class BackgroundManager : MonoBehaviour {
 				backgrounds.Add(background);
 			}
 		}
+
 		// because we want to start playing all mechanics;
 		state = State.PLAY;
 	}
 
 	private void Update() {
+		UnityEngine.Profiling.Profiler.BeginSample("Background Manager Update");
 		switch (state) {
 			case State.PAUSE:
 				break;
@@ -50,6 +54,7 @@ public class BackgroundManager : MonoBehaviour {
 			default:
 				break;
 		}
+		UnityEngine.Profiling.Profiler.EndSample();
 	}
 
 	private void Play() {
@@ -63,11 +68,14 @@ public class BackgroundManager : MonoBehaviour {
 
 		// because we want to change background over time;
 		foreach (GameObject background in backgrounds) {
+
 			// because we want to move things down;
 			Vector3 translation = new Vector3(0f, backgroundSpeed * Time.deltaTime, 0f);
 			background.transform.Translate(translation, Space.Self);
+
 			// because we want to re-use assets but putting them at the top;
 			if (background.transform.localPosition.y <= backgroundDeadzone) {
+
 				// because we need the size of the each segment;
 				Renderer renderer = background.GetComponentInChildren<Renderer>();
 				float offset = renderer.bounds.size.y * backgrounds.Count;

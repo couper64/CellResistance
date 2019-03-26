@@ -39,15 +39,14 @@ public class Bullet : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
+		UnityEngine.Profiling.Profiler.BeginSample("Bullet Script Update Profiling");
 		transform.Translate(Vector3.up * Time.deltaTime * speed, Space.Self);
-
 		if (x >= 100) {
 			Destroy(gameObject);
 		}
-
 		x++;
+		UnityEngine.Profiling.Profiler.EndSample();
 	}
 
 	private void OnTriggerEnter(Collider other)

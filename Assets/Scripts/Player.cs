@@ -36,6 +36,7 @@ public class Player : MonoBehaviour {
 	public GameObject whiteFuel;
 	public GameObject gameOverMenu;
 	public GameObject exp;
+	public GameObject expPrefab;
 	public GameObject gunCenter;
 	public GameObject ship;
 
@@ -62,81 +63,25 @@ public class Player : MonoBehaviour {
 		return false;
 	}
 
-	// Update is called once per frame
 	void Update() {
-		switch (state) {
-			case State.IDLE:
-				Idle();
-				break;
-			case State.FLYING:
-				Fly();
-				break;
-			case State.DEATH:
-				Death();
-				break;
-			case State.PAUSE:
-				// leave function;
-				// do nothing;
-				break;
-			default:
-				break;
-		}
-
-		switch (type) {
-			case Type.WHITE:
-				break;
-			case Type.BLACK:
-				break;
-			default:
-				break;
-		}
-		
-		//Death condition
-		if (hp <= 0) {
-			state = State.DEATH;
-			// protect from going to negative;
-			// because it does not look right;
-			hp = 0;
-		}
-		playerHealth.value = hp;
-		//if (hp < hpDeadzone) {
-		//	playerFace.sprite = playerFaceHurt;
-		//}
-		//else {
-		//	playerFace.sprite = playerFaceDefault;
-		//}
-		timer += Time.deltaTime;
-		if (timer > 1) {
-			playerFace.sprite = playerFaceDefault;
-		}
-		//power up;
-		playerSpecialAbility.value = power;
-		if (power >= 100.00f) {
-			power = 100f;
-			playerPowerUpStatus.sprite = playerPowerUpStatusUnlocked;
-		}
-		else {
-			playerPowerUpStatus.sprite = playerPowerUpStatusLocked;
-		}
-		power += 1f;
-
-		//fuel;
-		fuel = Mathf.Clamp(fuel, 0, 100);
-		float percentage = fuel / 100;
-		float scaleWidth = 0.4f;
-		float scaleHeight = 0.3f;
-		// assuming never more than 100;
-		scaleWidth = scaleWidth * percentage;
-		scaleHeight = scaleHeight * percentage;
-		whiteFuel.transform.localScale = new Vector3(
-			scaleWidth,
-			scaleHeight,
-			whiteFuel.transform.localScale.z
-		);
-
-		if (Input.GetButtonDown("Pause")) {
-			Pause();
-		}
+		UnityEngine.Profiling.Profiler.BeginSample("Player Script Update Profiling");
+		switch (state) { case State.IDLE: Idle(); break; case State.FLYING: Fly(); break;
+			case State.DEATH: Death(); break; case State.PAUSE: break; // leave function; // do nothing;
+			default: break; }
+		switch (type) { case Type.WHITE: break; case Type.BLACK: break; default: break; }
+		//Death condition // protect from going to negative; // because it does not look right;
+		if (hp <= 0) { state = State.DEATH; hp = 0; } playerHealth.value = hp; timer += Time.deltaTime;
+		if (timer > 1) { playerFace.sprite = playerFaceDefault; }
+		playerSpecialAbility.value = power; //power up;
+		if (power >= 100.00f) { power = 100f; playerPowerUpStatus.sprite = playerPowerUpStatusUnlocked; }
+		else { playerPowerUpStatus.sprite = playerPowerUpStatusLocked; }
+		power += 1f; fuel = Mathf.Clamp(fuel, 0, 100); //fuel;
+		float percentage = fuel / 100; float scaleWidth = 0.4f; float scaleHeight = 0.3f;
+		scaleWidth = scaleWidth * percentage; // assuming never more than 100;
+		scaleHeight = scaleHeight * percentage; whiteFuel.transform.localScale = new Vector3(
+			scaleWidth, scaleHeight, whiteFuel.transform.localScale.z
+		); if (Input.GetButtonDown("Pause")) { Pause();}
+		UnityEngine.Profiling.Profiler.EndSample();
 	}
 
 	private void Idle() {
@@ -248,9 +193,11 @@ public class Player : MonoBehaviour {
 	}
 
 	private void Death() {
-		//GameObject.FindGameObjectWithTag("Death").SetActive(true);
-		//state = State.DEATH;
-		Instantiate<GameObject>(exp, transform.position, transform.rotation);
+		if (exp == null)
+		{
+			exp = Instantiate(expPrefab, transform.position, transform.rotation);
+		}
+
 		hp = 0;
 		if (!gameOverMenu.activeSelf) {
 			gameOverMenu.SetActive(true);

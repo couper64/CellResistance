@@ -35,9 +35,11 @@ public class PropBehaviour : MonoBehaviour {
 	}
 
 	private void Update() {
+		UnityEngine.Profiling.Profiler.BeginSample("PropBehaviour Script Update Profiling");
 		if (isPulsable) {
 			Pulse();
 		}
+		UnityEngine.Profiling.Profiler.EndSample();
 	}
 
 	private void Pulse() {
@@ -48,20 +50,30 @@ public class PropBehaviour : MonoBehaviour {
 			// leaving;
 			return;
 		}
-		// at this point we are sure that it is 
-		// the time to play pulsing animation;
-		pulsingDurationTimer += Time.deltaTime;
-		if (pulsingDurationTimer > pulsingDuration) {
-			// because we want to change the direction of growth;
-			pulsingDirection = (pulsingDirection < 0) ? (1) : (-1);
-			pulsingDurationTimer = 0;
+
+		for (int i = 0; i < transform.childCount; i++) {
+			if (transform.GetChild(i).localScale.magnitude > pulsingMaxDuration) {
+				// because we want to change the direction of growth;
+				pulsingDirection = (-1);
+				// check only single child;
+				break;
+			}
+			else if (transform.GetChild(i).localScale.magnitude < pulsingMinDuration) {
+				// because we want to change the direction of growth;
+				pulsingDirection = (1);
+				// check only single child;
+				break;
+			}
 		}
+
 		Vector3 scaleDelta = Vector3.zero;
 		scaleDelta.x = pulsingSpeed;
 		scaleDelta.y = pulsingSpeed;
 		scaleDelta.z = pulsingSpeed;
 		scaleDelta /= 100.00f;
 		scaleDelta *= pulsingDirection;
+		// we want to unbind it from timeframe;
+		scaleDelta *= Time.deltaTime;
 		for (int i = 0; i < transform.childCount; i++) {
 			transform.GetChild(i).localScale += scaleDelta;
 		}

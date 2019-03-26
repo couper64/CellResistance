@@ -17,14 +17,17 @@ public class EnemyBehaviour : Enemy {
 	}
 
 	private void Update() {
-		//hp--;
+		UnityEngine.Profiling.Profiler.BeginSample("Enemy Behaviour Script Update Profiling");
 		Oscillating();
 		StraightLine();
 		Reposition();
 		Death();
+		UnityEngine.Profiling.Profiler.EndSample();
 	}
 	private void FixedUpdate() {
+		UnityEngine.Profiling.Profiler.BeginSample("Enemy Behaviour Script Fixed Update Profiling");
 		Fire();
+		UnityEngine.Profiling.Profiler.EndSample();
 	}
 
 	void StraightLine() {
